@@ -7,17 +7,18 @@
     --font-size: 16px;
     --line-height: 1.7;
 
-    --color-bg: #f2f2f2;
+    --color-bg: #ffffff;
     --color-surface: #ffffff;
+
     --color-text: #111111;
     --color-muted: #6b6b6b;
 
     --color-accent: #e86a1f; /* warm orange */
-    --color-border: #dcdcdc;
+    --color-border: #e1e1e1;
 }
 
 /* =============================
-   Base Layout
+   Base
    ============================= */
 *,
 *::before,
@@ -28,25 +29,22 @@
 body {
     margin: 0;
     padding: 0;
+    background: var(--color-bg);
     font-family: var(--font-body);
+    color: var(--color-text);
     font-size: var(--font-size);
     line-height: var(--line-height);
-    color: var(--color-text);
-    background: var(--color-bg);
     display: flex;
     justify-content: center;
 }
 
 .page {
     width: 100%;
-    max-width: 1040px;
+    max-width: 1080px;
     background: var(--color-surface);
-    padding: 32px;
-    margin: 40px 16px 60px;
-    border: 1px solid var(--color-border);
-
-    display: grid;
-    grid-row-gap: 32px;
+    padding: 40px 32px;
+    margin: 0;
+    border: none;
 }
 
 /* =============================
@@ -57,7 +55,8 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 24px;
     border-bottom: 2px solid var(--color-text);
-    padding-bottom: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .brand {
@@ -70,40 +69,40 @@ body {
     width: 40px;
     height: 40px;
     border: 1px solid var(--color-text);
-    font-size: 0.7rem;
-    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.72rem;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
 .site-title {
     margin: 0;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     line-height: 1.1;
     text-transform: uppercase;
 }
 
 .tagline {
     margin: 6px 0 0;
-    font-size: 0.9rem;
     color: var(--color-muted);
 }
 
+/* nav */
 .site-nav {
     display: flex;
     justify-content: flex-end;
+    gap: 16px;
     align-items: flex-start;
-    gap: 12px;
 }
 
 .site-nav a {
-    font-size: 0.8rem;
+    text-decoration: none;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    text-decoration: none;
     color: var(--color-text);
     border-bottom: 2px solid transparent;
 }
@@ -119,28 +118,28 @@ body {
 main {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 20px 20px;
+    gap: 28px 24px;
 }
 
 .intro {
     grid-column: 1 / span 7;
 }
 
+/* section headings */
 .section {
     grid-column: 1 / span 12;
 }
 
 .section-heading {
     border-top: 2px solid var(--color-text);
-    padding-top: 8px;
+    padding-top: 10px;
 }
 
 .section-heading h2 {
-    margin: 0;
     font-size: 1rem;
-    text-transform: uppercase;
     letter-spacing: 0.14em;
-    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 .section-subtitle {
@@ -153,73 +152,66 @@ main {
    Project Cards
    ============================= */
 .project-grid {
+    grid-column: 1 / span 12;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
+    gap: 28px;
 }
 
 .project-card {
     grid-column: span 6;
     border: 1px solid var(--color-border);
-    padding: 14px;
+    padding: 20px;
     background: #ffffff;
 }
 
 .project-card h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .project-meta {
-    margin: 4px 0 8px;
+    margin: 6px 0 8px;
     font-size: 0.8rem;
     color: var(--color-muted);
 }
 
 .project-card p {
-    margin: 10px 0;
-    font-size: 0.92rem;
+    margin: 12px 0;
+    font-size: 0.95rem;
 }
 
-/* =============================
-   Tags (hard-edged)
-   ============================= */
+/* tags */
 .tag-row {
     margin-top: 6px;
 }
 
 .tag {
     display: inline-block;
+    border: 1px solid var(--color-accent);
     padding: 2px 6px;
     margin-right: 6px;
     margin-bottom: 4px;
-    border: 1px solid var(--color-accent);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.16em;
     color: var(--color-accent);
 }
 
-/* =============================
-   Project Images
-   ============================= */
+/* image full bleed inside card */
 .project-image {
     display: block;
-    width: calc(100% + 28px); /* full-bleed inside card */
-    margin: 10px -14px 8px;
+    width: calc(100% + 40px);
+    margin: 14px -20px 10px;
     height: auto;
 }
 
-/* =============================
-   Links
-   ============================= */
+/* link */
 .project-link {
-    display: inline-block;
-    margin-top: 4px;
-    font-size: 0.85rem;
+    text-decoration: none;
+    font-size: 0.83rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    text-decoration: none;
     color: var(--color-accent);
     border-bottom: 1px solid transparent;
 }
@@ -228,16 +220,14 @@ main {
     border-bottom-color: var(--color-accent);
 }
 
-a {
-    color: var(--color-accent);
-}
-
 /* =============================
    Footer
    ============================= */
 .site-footer {
+    grid-column: 1 / span 12;
+    padding-top: 20px;
+    margin-top: 40px;
     border-top: 1px solid var(--color-border);
-    padding-top: 10px;
     font-size: 0.8rem;
     color: var(--color-muted);
 }
@@ -245,24 +235,16 @@ a {
 /* =============================
    Responsive
    ============================= */
-@media (max-width: 800px) {
-    .page {
-        padding: 20px;
-    }
-
+@media (max-width: 860px) {
     .site-header {
         grid-template-columns: 1fr;
     }
-
     main {
         grid-template-columns: repeat(6, 1fr);
     }
-
-    .intro,
-    .section {
+    .intro, .section {
         grid-column: 1 / span 6;
     }
-
     .project-card {
         grid-column: span 6;
     }
