@@ -52,11 +52,25 @@ body {
    Header
    ============================= */
 .site-header {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     padding-bottom: 24px;
     margin-bottom: 40px;
+}
+
+.site-title-link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+.site-title-link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
 }
 
 .brand {
