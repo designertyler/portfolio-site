@@ -52,25 +52,11 @@ body {
    Header
    ============================= */
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
     padding-bottom: 24px;
     margin-bottom: 40px;
-}
-
-.site-title-link {
-    text-decoration: none;
-    font-size: 0.95rem;
-    color: var(--color-muted);
-    border-bottom: 2px solid transparent;
-    letter-spacing: 0.04em;
-    font-weight: 500;
-}
-
-.site-title-link:hover {
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
 }
 
 .brand {
@@ -107,6 +93,21 @@ body {
 }
 
 .site-nav a:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+/* optional: style for title link in project pages header */
+.site-title-link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+.site-title-link:hover {
     color: var(--color-accent);
     border-bottom-color: var(--color-accent);
 }
@@ -181,10 +182,6 @@ main {
 }
 
 /* Image as primary subject */
-/* Image container: fixed aspect ratio so all cards align */
-/* Image-first card layout */
-
-/* Image container: fixed aspect ratio to align all tiles */
 .project-card-image {
     margin-bottom: 12px;
     overflow: hidden;
@@ -195,41 +192,35 @@ main {
 
     border-radius: 4px;
 
-    transition: box-shadow 0.35s ease; /* <-- shadow now works */
+    transition: box-shadow 0.35s ease;
 }
 
-/* Image behavior */
 .project-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 
-    transition: transform 0.15s ease;
+    transition: transform 0.35s ease;
 }
 
-/* Hover: zoom + wrapper shadow */
+/* Hover interactions: zoom + shadow */
 .project-card:hover .project-card-image img {
-    transform: scale(1.01);
+    transform: scale(1.04);
 }
 
 .project-card:hover .project-card-image {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.058);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
 }
 
-/* Text block under image */
+/* Text under image */
 .project-card-content {
     padding: 8px 4px;
     transition: background-color 0.25s ease;
 }
 
-.project-card:hover .project-card-content {
-    background-color: #f5f5f5;
-}
+/* (no text background change on hover now) */
 
-
-
-/* Text under image */
 .project-card-title {
     margin: 0 0 4px;
     font-size: 1.4rem;
@@ -405,6 +396,7 @@ a:hover {
    ============================= */
 
 /* Medium breakpoint: narrow desktop / tablet */
+/* Medium screens: make case content full width */
 @media (max-width: 1100px) {
 
     .page {
@@ -412,23 +404,36 @@ a:hover {
         margin: 16px;
     }
 
+    /* PROJECT GRID ADJUSTMENTS */
     .project-grid {
         grid-template-columns: 1fr;
     }
 
     .project-card {
-        grid-column: 1 / -1;   /* full width of the grid */
+        grid-column: 1 / -1;
         width: 100%;
         max-width: none;
         margin-left: 0;
         margin-right: 0;
     }
 
-    .project-image-wrapper {
-        margin: 12px 0 10px;
-        width: 100%;
+    /* CASE STUDY CONTENT FULL WIDTH */
+    .case-section {
+        max-width: 100%;
+        grid-column: 1 / span 12;
+    }
+
+    .case-layout {
+        max-width: 100%;
+        grid-template-columns: 1fr; /* stack left + right */
+        column-gap: 0;
+    }
+
+    .case-body {
+        max-width: 100%;
     }
 }
+
 
 @media (max-width: 860px) {
     .site-header {
@@ -444,21 +449,21 @@ a:hover {
         grid-template-columns: repeat(6, 1fr);
     }
 
+    /* Ensure sections occupy full width */
     .intro,
     .section,
     .case-section {
         grid-column: 1 / span 6;
-    }
-
-    .project-card {
-        grid-column: 1 / span 6;
+        max-width: 100%;
     }
 
     .case-layout {
         grid-template-columns: 1fr;
         row-gap: 12px;
+        max-width: 100%;
     }
 }
+
 
 /* ============================================
    IMAGE CAPTIONS — FIXED LEFT ALIGNMENT
@@ -550,4 +555,3 @@ a:hover {
     font-style: normal;
     color: #666;
 }
-
