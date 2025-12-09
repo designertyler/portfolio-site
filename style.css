@@ -11,7 +11,7 @@
     --color-text: #0D0D0D;
     --color-muted: #444444;
 
-    --color-accent: #0D0D0D;
+    --color-accent: #F24429;
     --color-border: #e1e1e1;
 }
 
@@ -56,7 +56,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;   /* TOP-align nav with name */
     padding-bottom: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .brand {
@@ -86,7 +86,7 @@ body {
 
 .site-nav a {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--color-text);
     border-bottom: 2px solid transparent;
     letter-spacing: 0.04em;
@@ -122,12 +122,10 @@ main {
 }
 
 .intro {
-    grid-column: 1 / span 6;  /* same width as one project-card */
+    grid-column: 1 / span 6;  /* same width as one project-card (desktop) */
     max-width: 100%;
     font-size: 1rem;
 }
-
-
 
 .section {
     grid-column: 1 / span 12;
@@ -135,7 +133,6 @@ main {
 
 /* Simple single-column section heading (used on home + contact) */
 .section-heading {
-    border-top: 1px solid rgba(13, 13, 13, 0.25);
     padding-top: 14px;
     margin-top: 12px;
     margin-bottom: 14px;
@@ -143,9 +140,9 @@ main {
 
 .section-heading h2 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-text);
 }
 
 .section-subtitle {
@@ -160,18 +157,34 @@ main {
 .project-grid {
     grid-column: 1 / span 12;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr;   /* STACKED VERTICALLY, FULL WIDTH */
     gap: 32px;
 }
 
-/* Image-first, simple cards */
+/* Tile: full-width, stacked; title left, image right, summary below */
 .project-card {
-    grid-column: span 6;
+    grid-column: 1 / -1;
     position: relative;
     cursor: pointer;
-    padding: 0 0 8px;
+    padding: 16px 0 16px;
     background: transparent;
-    border: none;
+    border-top: 1px solid var(--color-text);
+    padding-top: 24px; /* optional, gives breathing room */
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+    grid-template-areas:
+        "title image"
+        "summary image"
+        "meta image";
+    column-gap: 24px;
+
+}
+
+
+/* Hover: light grey tile background */
+.project-card:hover {
+    background-color: transparent;
 }
 
 /* Full-card click target */
@@ -182,18 +195,19 @@ main {
     text-indent: -9999px;
 }
 
-/* Image as primary subject */
+/* Image on the right */
 .project-card-image {
-    margin-bottom: 12px;
+    grid-area: image;
+    margin: 0;
     overflow: hidden;
     line-height: 0;
 
     aspect-ratio: 16 / 9;
     width: 100%;
 
-    border-radius: 4px;
 
-    transition: box-shadow 0.35s ease;
+    /* no visible box-shadow change now */
+    box-shadow: none;
 }
 
 .project-card-image img {
@@ -205,40 +219,50 @@ main {
     transition: transform 0.35s ease;
 }
 
-/* Hover interactions: zoom + shadow */
+/* Hover interactions: zoom ONLY (no shadow) */
 .project-card:hover .project-card-image img {
     transform: scale(1.04);
 }
 
-.project-card:hover .project-card-image {
-    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+/* Only change text color on hover */
+.project-card:hover .project-card-title,
+.project-card:hover .project-meta,
+.project-card:hover .project-summary {
+    color: #F24429; 
 }
 
-/* Text under image */
-.project-card-content {
-    padding: 8px 4px;
-    transition: background-color 0.25s ease;
-}
 
+/* Text on the left, description below tile */
 .project-card-title {
+    grid-area: title;
     margin: 0 0 4px;
     font-size: 2rem;
     font-weight: 700;
     line-height: normal;
     color: var(--color-accent);
+
 }
 
 .project-meta {
+    grid-area: meta;
     margin: 0 0 4px;
     font-size: 0.95rem;
     color: var(--color-muted);
 }
 
 .project-summary {
-    margin: 4px 0 0;
+    grid-area: summary;
+    margin: 12px 0 0;
     font-size: 0.95rem;
     color: var(--color-text);
 }
+
+/* Legacy project-card-content (unused but safe) */
+.project-card-content {
+    padding: 8px 4px;
+    background: transparent; 
+}
+
 
 /* (Legacy tag styles – not used now, safe to keep or delete) */
 .tag-row {
@@ -302,7 +326,7 @@ main {
     max-width: none;
     grid-column: 1 / span 12;
     padding: 16px 0 8px;
-    border-top: 1px solid rgba(13, 13, 13, 0.25);
+    border-top: 1px solid var(--color-text);
 }
 
 .case-layout {
@@ -328,7 +352,8 @@ main {
     margin: 0 0 8px;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--color-accent);
+    line-height: normal;
+    color: var(--color-text);
 
     position: sticky;
     top: 20px; /* adjust based on your header height */
@@ -403,17 +428,11 @@ a:hover {
         margin: 16px;
     }
 
-    /* PROJECT GRID ADJUSTMENTS */
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
+    /* PROJECT GRID: still one column, full width (already 1fr) */
 
     .project-card {
-        grid-column: 1 / -1;
-        width: 100%;
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 16px;
     }
 
     /* CASE STUDY CONTENT FULL WIDTH */
@@ -467,7 +486,34 @@ a:hover {
         row-gap: 12px;
         max-width: 100%;
     }
+
+    /* 🔽 NEW: stack project cards, title → meta → summary → image */
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
+    .project-card-title {
+        order: 1;
+    }
+
+    .project-meta {
+        order: 2;
+    }
+
+    .project-summary {
+        order: 3;
+    }
+
+    .project-card-image {
+        order: 4;
+        margin-top: 12px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
 }
+
 
 /* ============================================
    IMAGE CAPTIONS — FIXED LEFT ALIGNMENT
@@ -535,9 +581,9 @@ a:hover {
 .user-quote {
     margin: 64px 0 64px;
     padding-left: 20px;
-    border-left: 3px solid #0D0D0D;
+    border-left: 3px solid var(--color-accent);
     font-style: italic;
-    color: #333;
+    color: var(--color-text);
     font-size: 2rem;
     line-height: 1.6;
 }
@@ -545,9 +591,9 @@ a:hover {
 .user-quote-small {
     margin: 64px 0 64px;
     padding-left: 20px;
-    border-left: 3px solid #0D0D0D;
+    border-left: 3px solid var(--color-accent);
     font-style: italic;
-    color: #333;
+    color: var(--color-text);
     font-size: 1.2rem;
     line-height: 1.6;
 }
