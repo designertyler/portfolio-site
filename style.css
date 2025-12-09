@@ -5,11 +5,11 @@
     --font-size: 16px;
     --line-height: 1.7;
 
-    --color-bg: #ffffff;
-    --color-surface: #ffffff;
+    --color-bg: #f9f8f7;
+    --color-surface: #f9f8f7;
 
     --color-text: #0D0D0D;
-    --color-muted: #444444;
+    --color-muted: #634B44;
 
     --color-accent: #F24429;
     --color-border: #e1e1e1;
@@ -168,7 +168,7 @@ main {
     cursor: pointer;
     padding: 16px 0 16px;
     background: transparent;
-    border-top: 1px solid var(--color-text);
+    border-top: 3px solid var(--color-text);
     padding-top: 24px; /* optional, gives breathing room */
 
     display: grid;
@@ -182,7 +182,7 @@ main {
 }
 
 
-/* Hover: light grey tile background */
+/* Hover: tile background */
 .project-card:hover {
     background-color: transparent;
 }
