@@ -5,11 +5,11 @@
     --font-size: 16px;
     --line-height: 1.7;
 
-    --color-bg: #f9f8f7;
+    --color-bg: #F9F9F9;
     --color-surface: #f9f8f7;
 
-    --color-text: #0D0D0D;
-    --color-muted: #2e2d2d;
+    --color-text: #272626;
+    --color-muted: #777777;
 
     --color-accent: #F24429;
     --color-border: #e1e1e1;
@@ -228,7 +228,7 @@ main {
 .project-card:hover .project-card-title,
 .project-card:hover .project-meta,
 .project-card:hover .project-summary {
-    color: #F24429; 
+    color: var(--color-accent); 
 }
 
 
@@ -295,6 +295,23 @@ main {
     object-fit: cover;
 }
 
+.project-card-title,
+.project-meta,
+.project-summary {
+    text-decoration: none;
+}
+
+.project-card:hover .project-card-title,
+.project-card:hover .project-meta,
+.project-card:hover .project-summary {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+
+
 /* =============================
    Case Study Layout (project pages)
    ============================= */
@@ -350,7 +367,7 @@ main {
 
 .page-title {
     margin: 0 0 8px;
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: 700;
     line-height: normal;
     color: var(--color-text);
@@ -603,5 +620,5 @@ a:hover {
     margin-top: 8px;
     font-size: 1rem;
     font-style: normal;
-    color: #666;
+    color: var(--color-muted);
 }
