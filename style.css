@@ -366,16 +366,17 @@ main {
 }
 
 .page-title {
-    margin: 0 0 8px;
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: normal;
-    color: var(--color-text);
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-text);
 
-    position: sticky;
-    top: 20px; /* adjust based on your header height */
-    align-self: start;
+  position: sticky;
+  top: 20px;
+  align-self: start;
 }
+
 
 .case-meta-text {
     margin: 0;
