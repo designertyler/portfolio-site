@@ -59,29 +59,12 @@ body {
     margin-bottom: 0px;
 }
 
-.brand {
-    display: grid;
-    gap: 8px;
-}
-
-.site-title {
-    margin: 0;
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: var(--color-accent);
-}
-
-.tagline {
-    margin: 6px 0 0;
-    color: var(--color-muted);
-}
-
 .site-nav {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
     align-items: flex-start;
-    margin-top: 0;  /* keep nav aligned with top of brand */
+    margin-top: 0;  /* keep nav aligned with top */
 }
 
 .site-nav a {
@@ -182,11 +165,6 @@ main {
 }
 
 
-/* Hover: tile background */
-.project-card:hover {
-    background-color: transparent;
-}
-
 /* Full-card click target */
 .project-card a.project-card-link {
     position: absolute;
@@ -224,14 +202,6 @@ main {
     transform: scale(1.02);
 }
 
-/* Only change text color on hover */
-.project-card:hover .project-card-title,
-.project-card:hover .project-meta,
-.project-card:hover .project-summary {
-    color: var(--color-accent); 
-}
-
-
 /* Text on the left, description below tile */
 .project-card-title {
     grid-area: title;
@@ -257,44 +227,6 @@ main {
     color: var(--color-text);
 }
 
-/* Legacy project-card-content (unused but safe) */
-.project-card-content {
-    padding: 8px 4px;
-    background: transparent; 
-}
-
-
-/* (Legacy tag styles – not used now, safe to keep or delete) */
-.tag-row {
-    margin-top: 4px;
-    margin-bottom: 6px;
-}
-
-.tag {
-    display: inline-block;
-    border: 1px solid var(--color-border);
-    padding: 4px 8px;
-    margin-right: 6px;
-    margin-bottom: 4px;
-    font-size: 0.82rem;
-    color: var(--color-muted);
-    font-weight: 500;
-}
-
-/* Legacy thumbnail wrapper (if still used elsewhere) */
-.project-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    margin: 14px -20px 10px;
-    width: calc(100% + 40px);
-}
-
-.project-image {
-    width: 100%;
-    aspect-ratio: 3 / 1;
-    object-fit: cover;
-}
-
 .project-card-title,
 .project-meta,
 .project-summary {
@@ -309,7 +241,6 @@ main {
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
 }
-
 
 
 /* =============================
