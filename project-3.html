@@ -375,28 +375,7 @@
 
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const overlay = document.createElement("div");
-      overlay.className = "image-lightbox-overlay";
-
-      const img = document.createElement("img");
-      overlay.appendChild(img);
-      document.body.appendChild(overlay);
-
-      overlay.addEventListener("click", () => {
-        overlay.style.display = "none";
-        img.src = "";
-      });
-
-      document.querySelectorAll(".clickable-image").forEach(image => {
-        image.addEventListener("click", () => {
-          img.src = image.src;
-          overlay.style.display = "flex";
-        });
-      });
-    });
-  </script>
+  <script src="lightbox.js" defer></script>
 
 </body>
 

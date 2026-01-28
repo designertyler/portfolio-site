@@ -512,13 +512,56 @@ a:hover {
     z-index: 9999;
     cursor: zoom-out;
     padding: 10px;
+    overflow: hidden;
 }
 
 .image-lightbox-overlay img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    cursor: zoom-in;
+}
+
+.image-lightbox-overlay.is-zoomed {
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: auto; /* allow 1:1 images to scroll if larger than viewport */
+    cursor: zoom-out;
+}
+
+.image-lightbox-overlay.is-zoomed img {
+    max-width: none;
+    max-height: none;
+    cursor: grab;
+}
+
+.image-lightbox-overlay.is-panning img {
+    cursor: grabbing;
+}
+
+.image-lightbox-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.image-lightbox-close:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .clickable-image {
@@ -536,11 +579,8 @@ a:hover {
     color: var(--color-text);
     font-size: 2rem;
     line-height: 1.6;
-<<<<<<< ours
     position: relative;
     overflow: visible;
-=======
->>>>>>> theirs
 }
 
 .user-quote-small {
