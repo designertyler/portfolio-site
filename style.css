@@ -84,16 +84,39 @@ body {
 /* optional: style for title link in project pages header */
 .site-title-link {
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     border-bottom: 2px solid transparent;
     letter-spacing: 0.04em;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--color-text);
 }
 
 .site-title-link:hover {
-    color: var(--color-text) !important;
+    color: var(--color-accent);
     border-bottom-color: var(--color-accent);
+}
+
+/* Home page header uses the same column proportions as project cards */
+.home-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+    column-gap: 24px;
+    align-items: start;
+}
+
+.home-title {
+    margin: 0 0 4px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--color-accent);
+}
+
+.home-intro {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: var(--line-height);
 }
 
 /* =============================
@@ -152,7 +175,7 @@ main {
     cursor: pointer;
     padding: 16px 0 16px;
     background: transparent;
-    border-top: 3px solid var(--color-text);
+    border-top: 1px solid var(--color-text);
     padding-top: 24px; /* optional, gives breathing room */
 
     display: grid;
@@ -385,6 +408,11 @@ a:hover {
         column-gap: 16px;
     }
 
+    .home-header {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 16px;
+    }
+
     /* CASE STUDY CONTENT FULL WIDTH */
     .case-section {
         max-width: 100%;
@@ -412,6 +440,14 @@ a:hover {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+    }
+
+    .home-header {
+        display: block;
+    }
+
+    .home-intro {
+        margin-top: 12px;
     }
 
     .site-nav {
@@ -483,9 +519,10 @@ a:hover {
 
 .fig-caption {
     margin-top: 8px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-style: normal;
     color: var(--color-muted);
-    line-height: 1.5;
+    line-height: var(--line-height);
     max-width: none;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -593,15 +630,13 @@ a:hover {
     line-height: 1.6;
 }
 
-.user-quote .quote-source {
+.quote-source {
     display: block;
     margin-top: 8px;
     font-size: 1rem;
     font-style: normal;
     color: var(--color-muted);
 }
-<<<<<<< ours
-
 .user-quote::after {
     content: "";
     position: absolute;
@@ -618,5 +653,3 @@ a:hover {
 .user-quote.quote-in-view::after {
     transform: scaleX(1);
 }
-=======
->>>>>>> theirs
