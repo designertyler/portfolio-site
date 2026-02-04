@@ -102,6 +102,7 @@ body {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
     column-gap: 24px;
     align-items: start;
+    margin-bottom: 24px;
 }
 
 .home-title {
@@ -117,6 +118,10 @@ body {
     font-size: 1rem;
     color: var(--color-text);
     line-height: var(--line-height);
+}
+
+.about-section {
+    margin-bottom: 48px;
 }
 
 /* =============================
