@@ -107,7 +107,7 @@ body {
 
 .home-title {
     margin: 0 0 4px;
-    font-size: clamp(2.25rem, 8vw, 6rem);
+    font-size: clamp(2.25rem, 8vw, 5.5rem);
     font-weight: 700;
     line-height: 1;
     color: var(--color-accent);
