@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Cloud Dashboard</title>
+
+  <!-- Carbon Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.min.css">
+
+  <link rel="stylesheet" href="ibm-dashboard.css">
+</head>
+<body data-theme="light">
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="header-logo">IBM Cloud</a>
+
+    <div class="header-search">
+      <span class="carbon-icon icon-search" aria-hidden="true"></span>
+      <input type="text" placeholder="Search for a resource or offering">
+    </div>
+
+    <nav class="header-nav">
+      <a href="#" class="header-nav-item">Catalog</a>
+      <a href="#" class="header-nav-item">Docs</a>
+      <a href="#" class="header-nav-item">Support</a>
+      <a href="#" class="header-nav-item">Manage</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-action-button" aria-label="Notifications">
+        <span class="carbon-icon icon-notification" aria-hidden="true"></span>
+      </button>
+      <button class="header-action-button" aria-label="User Profile">
+        <span class="carbon-icon icon-user" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="#">My products</a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="service-title">
+        My service
+        <span class="tag">Service</span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <a class="tab" href="dashboard.html">Dashboard</a>
+        <a class="tab" href="product-team.html">Product team</a>
+        <a class="tab" href="product-listing.html">Product listing</a>
+        <a class="tab active" href="lifecycle-approval.html">Lifecycle approval</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="lifecycle-main">
+          <div class="lifecycle-state">&minus; Not submitted</div>
+          <h1 class="lifecycle-title">Lifecycle approval</h1>
+          <p class="lifecycle-desc">IBM Cloud Service Framework is a consolidated set of requirements and processes for all first party products being developed for IBM Cloud. Onboarding a Service to the IBM Cloud Platform ensures that key architectural, security, availability, operational and user experience requirements are met, to present a secure, compliant and reliable service to our customers. <a href="#">Learn more</a>.</p>
+          <div class="lifecycle-filter"><span>Beta</span><span aria-hidden="true">&#9662;</span></div>
+          <div class="lifecycle-table">
+            <div class="lifecycle-header"><div class="lifecycle-cell">Pilar</div><div class="lifecycle-cell">Tasks to complete</div><div class="lifecycle-cell">Status</div><div class="lifecycle-cell">Extensions</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#9662;</span> Architecture</div><div class="lifecycle-cell task-links">3 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot bad"></span>Non-compliant</span></div><div class="lifecycle-cell">N/A</div></div>
+            <div class="expanded-panel"><div class="expanded-grid"><div><div class="expanded-heading">Non-compliant</div><div class="expanded-links"><a href="#">ARCH001b.8 Capacity Planning</a><a href="#">ARCH001b.9 Automated Deployments</a><a href="#">ARCH006.cse Provide Cloud Service Endpoints</a></div></div><div><div class="expanded-heading">Last scanned</div><div>Mon, 20 Jun 2023 17:53:20</div></div><div><div class="expanded-heading">Due date</div><div>Mon, 20 Jun 2024 17:53:20</div></div></div><div class="resource-title">Resources</div><div class="resource-subtext">Helpful links related to this Service Framework pillar.</div><div class="resource-cards"><div class="resource-card"><div><h4>GitHub</h4><p>Description</p></div><span class="resource-arrow">&#8594;</span></div><div class="resource-card"><div><h4>Slack</h4><p>Description</p></div><span class="resource-arrow">&#8594;</span></div><div class="resource-card"><div><h4>Service Framework</h4><p>Description</p></div><span class="resource-arrow">&#8594;</span></div></div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> Security</div><div class="lifecycle-cell task-links">0 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot good"></span>Compliant</span></div><div class="lifecycle-cell">N/A</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> Billing and metering</div><div class="lifecycle-cell task-links">0 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot good"></span>Compliant</span></div><div class="lifecycle-cell">1</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> Operations</div><div class="lifecycle-cell task-links">0 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot good"></span>Compliant</span></div><div class="lifecycle-cell">N/A</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> User Experience</div><div class="lifecycle-cell task-links">0 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot good"></span>Compliant</span></div><div class="lifecycle-cell">N/A</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> OEL</div><div class="lifecycle-cell task-links">0 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot good"></span>Compliant</span></div><div class="lifecycle-cell">N/A</div></div>
+            <div class="lifecycle-row"><div class="lifecycle-cell lifecycle-pillars"><span aria-hidden="true">&#8250;</span> BC/DR</div><div class="lifecycle-cell task-links">2 <a href="#">View all</a></div><div class="lifecycle-cell"><span class="status-badge"><span class="status-dot bad"></span>Non-compliant</span></div><div class="lifecycle-cell">1</div></div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Cloud Dashboard</title>
+
+  <!-- Carbon Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.min.css">
+
+  <link rel="stylesheet" href="ibm-dashboard.css">
+</head>
+<body data-theme="light">
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="header-logo">IBM Cloud</a>
+
+    <div class="header-search">
+      <span class="carbon-icon icon-search" aria-hidden="true"></span>
+      <input type="text" placeholder="Search for a resource or offering">
+    </div>
+
+    <nav class="header-nav">
+      <a href="#" class="header-nav-item">Catalog</a>
+      <a href="#" class="header-nav-item">Docs</a>
+      <a href="#" class="header-nav-item">Support</a>
+      <a href="#" class="header-nav-item">Manage</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-action-button" aria-label="Notifications">
+        <span class="carbon-icon icon-notification" aria-hidden="true"></span>
+      </button>
+      <button class="header-action-button" aria-label="User Profile">
+        <span class="carbon-icon icon-user" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="#">My products</a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="service-title">
+        My service
+        <span class="tag">Service</span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <a class="tab" href="dashboard.html">Dashboard</a>
+        <a class="tab active" href="product-team.html">Product team</a>
+        <a class="tab" href="product-listing.html">Product listing</a>
+        <a class="tab" href="lifecycle-approval.html">Lifecycle approval</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="lifecycle-main">
+          <h1 class="lifecycle-title">Product team</h1>
+          <p class="lifecycle-desc">Manage owners, contributors, and approval stakeholders for this service. This view is ready for team roster, role mapping, and invite flows.</p>
+          <div class="cds--tile" style="max-width: 820px;">
+            <div class="tile-title">Team workspace</div>
+            <div class="repo-text">Use this page to assign service roles, define escalation points, and onboard new collaborators.</div>
+            <a class="link" href="#">Invite teammate</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
